@@ -1,0 +1,84 @@
+.todoview {
+    display: grid;
+    grid-template-columns: 1fr 9fr 1fr;
+    text-align: left;
+    padding: 5px 10px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+
+.todoview:hover{
+    border: 1px solid #00000026;
+    background: #c0c0c059;
+}
+
+.inputposition{
+    display: grid;
+    align-content: center;
+    justify-content: end;
+}
+.grid{
+  display: grid;
+}
+
+/* прячем input checkbox */
+  input[type="checkbox"] {
+      /* display: none; */
+      margin: 0px;
+      height: 20px;
+      width: 20px;
+    }
+   
+  /* стили для метки */
+  label {
+    color: #000;
+    cursor: default;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 10px 0;
+    vertical-align: middle;
+  }
+   
+  /* формируем внешний вид чекбокса в псевдоэлементе before */
+  label:before {
+    content: " ";
+    /* content: "\2716"; */
+    color: #000;
+    display: inline-block;
+    font: 15px/20px Arial;
+    position: relative;
+    text-align: center;
+    text-indent: 0px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    vertical-align: middle;
+  }
+   
+  /* вариации внешнего вида в зав-ти от статуса checkbox */
+  /* checked */
+  input:checked + label:before {
+    content: "\2714";
+  }
+  /* disabled */
+  input:disabled + label:before {
+    background: #eee;
+    color: #aaa;
+  }
+
+#delete::before{
+    content: "\2716";
+    border: none!important;
+    display: none;
+}
+
+.todoview:hover #delete:before{
+  display: block!important;
+}
+.chekedtodo{
+  opacity: 0.25;
+}
+.line{
+  text-decoration: line-through;
+}
